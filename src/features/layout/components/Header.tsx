@@ -10,7 +10,7 @@ function Header() {
         'h-[100px]',
         'flex items-center',
         'grid',
-        'grid-cols-[400px_minmax(900px,_1fr)]'
+        'grid-cols-[300px_minmax(900px,_1fr)]'
       )}
     >
       <div>
