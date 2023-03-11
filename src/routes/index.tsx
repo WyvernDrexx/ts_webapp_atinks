@@ -1,23 +1,16 @@
 import { ContactUsRoutes } from 'features/contact'
-import { Link, Outlet, RouteObject, useRoutes } from 'react-router-dom'
-const AdminLayput = () => {
-  return (
-    <div>
-      <Link to='/admin/users'></Link>
-      <Outlet />
-    </div>
-  )
-}
+import { Layout } from 'features/layout'
+import { RouteObject, useRoutes } from 'react-router-dom'
 
-export const adminViewRoutes: RouteObject[] = [
+export const routes: RouteObject[] = [
   {
     path: '/',
-    element: <AdminLayput />,
+    element: <Layout />,
     children: [{ path: '/', element: <ContactUsRoutes /> }]
   }
 ]
-export const AppRoutes = () => {
-  const element = useRoutes(adminViewRoutes)
 
+export const AppRoutes = () => {
+  const element = useRoutes(routes)
   return <>{element}</>
 }
