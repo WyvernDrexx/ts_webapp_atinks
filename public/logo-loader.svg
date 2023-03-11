@@ -1,0 +1,76 @@
+<svg version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="60px" height="60px" viewBox="0 0 60 60">
+  <title>Procyon Logo Loader</title>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g transform="translate(-336.000000, -68.000000)">
+      <g xmlns="http://www.w3.org/2000/svg" transform="translate(336.000000, 68.000000)" id="r">
+        <rect fill="#FFFFFF" width="60" height="60" rx="2" id="r" x="0" y="0" fill-opacity="50%"/>
+        <rect fill="#FFA822" width="16" height="16" rx="2" id="r1" x="4" y="4" />
+        <rect fill="#134E6F" width="16" height="16" rx="2" id="r2" y="4" x="22" />
+        <rect fill="#FF6150" width="16" height="16" rx="2" id="r3" y="4" x="40" />
+        <rect fill="#1AC0C6" width="16" height="16" rx="2" id="r4" x="4" y="22" />
+        <rect fill="#FFA822" width="16" height="16" rx="2" id="r5" y="22" x="22" />
+        <rect fill="#1AC0C6" width="16" height="16" rx="2" id="r6" x="40" y="22" />
+        <rect fill="#134E6F" width="16" height="16" rx="2" id="r7" y="40" x="4" />
+        <rect fill="#FF6150" width="16" height="16" rx="2" id="r8" x="22" y="40" />
+      </g>
+    </g>
+  </g>
+  <style xmlns="http://www.w3.org/1999/xhtml" type="text/css">
+        @keyframes logo-loader {
+            0% {
+                opacity: 0
+            }
+
+            25% {
+                opacity: 0.5
+            }
+
+            50%,
+            100% {
+                opacity: 1
+            }
+        }
+
+        #r1 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0s;
+        }
+
+        #r2 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.05s;
+        }
+
+        #r3 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.1s;
+        }
+
+        #r6 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.15s;
+        }
+
+        #r5 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.2s;
+        }
+
+        #r4 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.25s;
+        }
+
+        #r7 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.3s;
+        }
+
+        #r8 {
+            animation: logo-loader 0.5s linear infinite;
+            animation-delay: 0.35s;
+        }
+  </style>
+</svg>
