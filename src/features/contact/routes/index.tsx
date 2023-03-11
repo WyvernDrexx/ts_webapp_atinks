@@ -1,9 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { AboutUs } from './AboutUs'
 
 const ContactUsRoutes = () => {
   return (
     <Routes>
-      <Route path='/' element={<div>Contact Us</div>} />
+      <Route path='/' element={<AboutUs />} />
       <Route path='/details' element={<div>Details Element</div>} />
       <Route path='*' element={<Navigate to='.' />} />
     </Routes>
