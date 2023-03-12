@@ -51,7 +51,7 @@ export function Tabs({ tabs }: TabsProps) {
           </TabList>
         </Box>
         {tabs.map((e, i) => (
-          <TabPanel key={i} value={i.toString()}>
+          <TabPanel sx={{ paddingLeft: 0 }} key={i} value={i.toString()}>
             {e.Component}
           </TabPanel>
         ))}

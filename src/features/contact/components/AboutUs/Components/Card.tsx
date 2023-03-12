@@ -1,9 +1,12 @@
-import { PersonPinCircle } from '@mui/icons-material'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Edit } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import { PropsWithChildren } from 'react'
+
 type CardProps = {
   title: string
-  icon: JSX.Element
+  icon: IconDefinition
   onEditClick: () => void
 }
 
@@ -14,20 +17,19 @@ function Card({
   children
 }: PropsWithChildren<CardProps>) {
   return (
-    <div className={`w-[375px] border-2 p-6 rounded-xl`}>
+    <div className={`border p-6 rounded-xl`}>
       <div className='flex justify-between items-center'>
-        <div>
-          {icon}
-          {title}
+        <div className='flex items-center'>
+          <FontAwesomeIcon size='2x' color='#c3c3c3' icon={icon} />
+          <p className='ml-3 font-semibold'>{title}</p>
         </div>
         <IconButton onClick={onEditClick}>
-          <PersonPinCircle />
+          <Edit color='error' />
         </IconButton>
       </div>
-      {children}
+      <div>{children}</div>
     </div>
   )
 }
 
 export { Card }
-
