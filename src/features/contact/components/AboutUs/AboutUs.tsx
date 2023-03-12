@@ -1,5 +1,7 @@
+import { ContactPage } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import { Tabs } from 'components/common'
+import { Card } from './Components'
 
 function AboutUs() {
   return (
@@ -27,7 +29,17 @@ function AboutUs() {
             tabs={[
               {
                 label: 'Info',
-                Component: <div>Info</div>
+                Component: (
+                  <div>
+                    <Card
+                      icon={<ContactPage />}
+                      onEditClick={() => null}
+                      title='Contact'
+                    >
+                      CHILD
+                    </Card>
+                  </div>
+                )
               },
               {
                 label: 'FAQ',

@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { AboutUs } from './AboutUs'
+import { AboutUs } from '../components'
 
 const ContactUsRoutes = () => {
   return (
