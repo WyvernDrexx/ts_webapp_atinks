@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import { Tabs } from 'components/common'
 
 function AboutUs() {
   return (
@@ -20,6 +21,32 @@ function AboutUs() {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil
           nesciunt ea officia ipsa delectus repellat. Lorem ipsum dolor, sit
           amet consectetur adipisicing elit.
+        </div>
+        <div className='mt-[55px]'>
+          <Tabs
+            tabs={[
+              {
+                label: 'Info',
+                Component: <div>Info</div>
+              },
+              {
+                label: 'FAQ',
+                Component: <div>FAQ</div>
+              },
+              {
+                label: 'Complaints and Feedbacks',
+                Component: <div>Complaints and Feedbacks</div>
+              },
+              {
+                label: 'Privacy Policy',
+                Component: <div>Privacy Policy</div>
+              },
+              {
+                label: 'Terms and Condition',
+                Component: <div>Terms and Condition</div>
+              }
+            ]}
+          />
         </div>
       </div>
     </div>

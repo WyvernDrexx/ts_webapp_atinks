@@ -636,6 +636,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/fontawesome-common-types@npm:6.3.0":
+  version: 6.3.0
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.3.0"
+  checksum: ece71539190abb17144861c58d65b6cd818d38a28cc3c9694325f5dca13739b2d78655e7bc1cba58cc13947f5ca80659e87c5c8bee7beb77d7f991e508312146
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.3.0"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.3.0
+  checksum: 2479d4b0dc45bba2638b05ba816df91fad6331cd3254d846705a0c342dc12259724706066c71461809804b4f41f15425439cfbabc42d7918e6c26b2b467b4b59
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.3.0"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.3.0
+  checksum: 5cffcdb954f9ea8d48c6872118f21840f206d6279a6b803a31563e48fee34fbf5bc05848f5dedf07fc16f60910712c6bd0dc83f7a4e408cf062153a48022525d
+  languageName: node
+  linkType: hard
+
+"@fortawesome/react-fontawesome@npm:latest":
+  version: 0.2.0
+  resolution: "@fortawesome/react-fontawesome@npm:0.2.0"
+  dependencies:
+    prop-types: ^15.8.1
+  peerDependencies:
+    "@fortawesome/fontawesome-svg-core": ~1 || ~6
+    react: ">=16.3"
+  checksum: f652a0c2172e7b209e2d9e7e511f9b8c17abad85f55e0bd09bb1175ea1927693215da47eb6cd95b1f3a23bd124368553c677907fa76cb17c5093afc1fcffe338
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -743,6 +780,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/base@npm:5.0.0-alpha.120":
+  version: 5.0.0-alpha.120
+  resolution: "@mui/base@npm:5.0.0-alpha.120"
+  dependencies:
+    "@babel/runtime": ^7.21.0
+    "@emotion/is-prop-valid": ^1.2.0
+    "@mui/types": ^7.2.3
+    "@mui/utils": ^5.11.12
+    "@popperjs/core": ^2.11.6
+    clsx: ^1.2.1
+    prop-types: ^15.8.1
+    react-is: ^18.2.0
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 2d459ae99b9352628023f0403fa953b97ed3553748350122db93ab96ed156b699c8cae4cece28af96c0d31a27273b9df36c2d34a2935c1f7286229dab5befdf4
+  languageName: node
+  linkType: hard
+
 "@mui/core-downloads-tracker@npm:^5.11.12":
   version: 5.11.12
   resolution: "@mui/core-downloads-tracker@npm:5.11.12"
@@ -763,6 +823,36 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 6ec89f3c68aaedd521f6a5106964394c410b08cec6875166d3ee97dcbaf2983c67d3b19cd58113d767d9f934cc0e9439fb5856e45471f5094656c0f87bbefecd
+  languageName: node
+  linkType: hard
+
+"@mui/lab@npm:^5.0.0-alpha.122":
+  version: 5.0.0-alpha.122
+  resolution: "@mui/lab@npm:5.0.0-alpha.122"
+  dependencies:
+    "@babel/runtime": ^7.21.0
+    "@mui/base": 5.0.0-alpha.120
+    "@mui/system": ^5.11.12
+    "@mui/types": ^7.2.3
+    "@mui/utils": ^5.11.12
+    clsx: ^1.2.1
+    prop-types: ^15.8.1
+    react-is: ^18.2.0
+  peerDependencies:
+    "@emotion/react": ^11.5.0
+    "@emotion/styled": ^11.3.0
+    "@mui/material": ^5.0.0
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@emotion/react":
+      optional: true
+    "@emotion/styled":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 2187114bc321b383dfe4bd629321a1519ed643a9c97d3d65901c5239f981b2ba35436b323d29450956df262dad10e9fbb238ef8360b3a369285c180cbbcef201
   languageName: node
   linkType: hard
 
@@ -3570,7 +3660,11 @@ __metadata:
     "@emotion/styled": ^11.10.6
     "@fontsource/ibm-plex-sans": ^4.5.13
     "@fontsource/roboto": ^4.5.8
+    "@fortawesome/fontawesome-svg-core": ^6.3.0
+    "@fortawesome/free-solid-svg-icons": ^6.3.0
+    "@fortawesome/react-fontawesome": latest
     "@mui/icons-material": ^5.11.11
+    "@mui/lab": ^5.0.0-alpha.122
     "@mui/material": ^5.11.12
     "@types/lodash": ^4.14.191
     "@types/node": ^18.11.18
