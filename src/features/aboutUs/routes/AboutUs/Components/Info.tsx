@@ -97,12 +97,6 @@ function Info() {
       [type]: selectedContact[type].filter((e) => e !== value)
     }
     setSelectedContact(newContact)
-    setContacts((s) =>
-      s.map((e) => {
-        if (e.key === selectedContact.key) return newContact
-        return e
-      })
-    )
   }
 
   const handleContactAdd = (type: 'emails' | 'phoneNumbers', value: string) => {
@@ -112,12 +106,17 @@ function Info() {
       [type]: [value, ...selectedContact[type]]
     }
     setSelectedContact(newContact)
+  }
+
+  const handleContactSave = () => {
+    if (!selectedContact) return
     setContacts((s) =>
       s.map((e) => {
-        if (e.key === selectedContact.key) return newContact
+        if (e.key === selectedContact.key) return selectedContact
         return e
       })
     )
+    setIsEditMode(false)
   }
 
   return (
@@ -185,7 +184,7 @@ function Info() {
               />
             ))}
             <TextField
-              type='number'
+              type='email'
               variant='standard'
               value={emailInput}
               onChange={(e) => setEmailInput(e.target.value)}
@@ -245,7 +244,10 @@ function Info() {
               ADD MORE
             </Button>
           </div>
-          <Button className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'>
+          <Button
+            onClick={handleContactSave}
+            className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'
+          >
             SAVE
           </Button>
         </div>
