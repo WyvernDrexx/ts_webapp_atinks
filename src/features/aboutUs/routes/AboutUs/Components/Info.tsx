@@ -1,24 +1,18 @@
 import {
-  faAddressBook,
-  faCirclePlus,
-  faClock,
+  faAddressBook, faClock,
   faLink,
   faLocationPin,
   faQuoteLeft
 } from '@fortawesome/free-solid-svg-icons'
 import { FloatingDrawer } from 'components/common/FloatingDrawer'
+import { ContactType } from 'features/aboutUs'
 import { useState } from 'react'
 import { Card } from '../../../components/Card'
 import { ContactCardBody } from './ContactCardBody'
-import { TextField, Chip } from '@mui/material'
-import { Button } from 'components/common'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ContactType } from 'features/aboutUs'
+import { ContactEdit } from './ContactEdit'
 import { ContactList } from './ContactList'
 
 function Info() {
-  const [emailInput, setEmailInput] = useState('')
-  const [phoneInput, setPhoneInput] = useState('')
   const [isEditMode, setIsEditMode] = useState(false)
   const [showContactEdit, setShowContactEdit] = useState(false)
   const [selectedContact, setSelectedContact] = useState<ContactType | null>(
@@ -83,32 +77,11 @@ function Info() {
     }
   ]
 
-  const handleContactRemove = (
-    type: 'emails' | 'phoneNumbers',
-    value: string
-  ) => {
-    if (!selectedContact) return
-    const newContact = {
-      ...selectedContact,
-      [type]: selectedContact[type].filter((e) => e !== value)
-    }
-    setSelectedContact(newContact)
-  }
-
-  const handleContactAdd = (type: 'emails' | 'phoneNumbers', value: string) => {
-    if (!selectedContact) return
-    const newContact = {
-      ...selectedContact,
-      [type]: [value, ...selectedContact[type]]
-    }
-    setSelectedContact(newContact)
-  }
-
-  const handleContactSave = () => {
-    if (!selectedContact) return
+  const handleContactSave = (contact: ContactType | null) => {
+    if (!contact) return
     setContacts((s) =>
       s.map((e) => {
-        if (e.key === selectedContact.key) return selectedContact
+        if (e.key === contact.key) return contact
         return e
       })
     )
@@ -145,93 +118,11 @@ function Info() {
         onClose={() => setIsEditMode(false)}
         show={isEditMode}
       >
-        <div className='relative h-[100%]'>
-          <p className='text-[#acb0b3] mt-4 mb-10'>
-            Please provide the company's email & contacts
-          </p>
-          <div>
-            <p className='mb-2'>Email ID</p>
-            {selectedContact?.emails.map((e) => (
-              <Chip
-                sx={{
-                  marginRight: 1,
-                  marginTop: 1
-                }}
-                onDelete={() => handleContactRemove('emails', e)}
-                label={e}
-              />
-            ))}
-            <TextField
-              type='email'
-              variant='standard'
-              value={emailInput}
-              onChange={(e) => setEmailInput(e.target.value)}
-              sx={{
-                marginTop: 2,
-                backgroundColor: '##f7f7f7'
-              }}
-              InputProps={{
-                className: 'bg-[#f7f7f7] border-0 p-3 rounded-lg',
-                disableUnderline: true
-              }}
-              placeholder='eg. salesteam@br.in'
-              fullWidth
-            />
-            <Button
-              onClick={() => handleContactAdd('phoneNumbers', phoneInput)}
-              className='mt-4 hover:text-white hover:bg-[#c42e38] text-lg w-[100%] py-4 font-bold text-[#BF202A] bg-[#fff1f3]'
-            >
-              <FontAwesomeIcon className='mr-2' icon={faCirclePlus} />
-              ADD MORE
-            </Button>
-          </div>
-          <div className='mt-8 relative h-[100%]'>
-            <p className='mb-2'>Contact Number</p>
-            {selectedContact?.phoneNumbers.map((e) => (
-              <Chip
-                onDelete={() => handleContactRemove('phoneNumbers', e)}
-                sx={{
-                  marginRight: 1,
-                  marginTop: 1
-                }}
-                label={e}
-              />
-            ))}
-            <TextField
-              type='tel'
-              variant='standard'
-              className='border-0'
-              value={phoneInput}
-              onChange={(e) => setPhoneInput(e.target.value)}
-              sx={{
-                marginTop: 2,
-                backgroundColor: '##f7f7f7'
-              }}
-              InputProps={{
-                className: 'bg-[#f7f7f7] border-0 p-3 rounded-lg',
-                disableUnderline: true
-              }}
-              placeholder='eg. 8554526586'
-              fullWidth
-            />
-            <Button
-              onClick={() => handleContactAdd('phoneNumbers', phoneInput)}
-              className='mt-4 hover:text-white hover:bg-[#c42e38] text-lg w-[100%] py-4 font-bold text-[#BF202A] bg-[#fff1f3]'
-            >
-              <FontAwesomeIcon className='mr-2' icon={faCirclePlus} />
-              ADD MORE
-            </Button>
-          </div>
-          <Button
-            onClick={handleContactSave}
-            className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'
-          >
-            SAVE
-          </Button>
-        </div>
+        <ContactEdit contact={selectedContact} handleSave={handleContactSave} />
       </FloatingDrawer>
     </div>
   )
 }
 
 export { Info }
+
