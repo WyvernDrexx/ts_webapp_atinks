@@ -8,6 +8,7 @@ import {
   faPhone
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FloatingDrawer } from 'components/common/FloatingDrawer'
 import { cn } from 'utils'
 import { Card } from './Card'
 
@@ -58,6 +59,17 @@ function Info() {
               )}
             </div>
           </div>
+          <FloatingDrawer show onClose={() => null} title='Contacts'>
+            <div className='mt-6'>
+              <Card
+                icon={faAddressBook}
+                onEditClick={() => null}
+                title='Sales Team'
+              >
+                Content
+              </Card>
+            </div>
+          </FloatingDrawer>
         </div>
       )
     },
