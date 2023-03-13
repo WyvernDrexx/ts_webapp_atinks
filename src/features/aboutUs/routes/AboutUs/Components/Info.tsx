@@ -13,13 +13,8 @@ import { ContactCardBody } from './ContactCardBody'
 import { TextField, Chip } from '@mui/material'
 import { Button } from 'components/common'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-type ContactType = {
-  teamName: string
-  phoneNumbers: string[]
-  emails: string[]
-  key: string
-}
+import { ContactType } from 'features/aboutUs'
+import { ContactList } from './ContactList'
 
 function Info() {
   const [emailInput, setEmailInput] = useState('')
@@ -53,6 +48,7 @@ function Info() {
       key: 'devops-team'
     }
   ])
+
   const cards = [
     {
       title: 'Contact',
@@ -136,31 +132,13 @@ function Info() {
         onClose={() => setShowContactEdit(false)}
         title='Contacts'
       >
-        <div className='relative h-[100%]'>
-          <p className='text-[#acb0b3] mt-4'>
-            Please provide the company's email & contacts
-          </p>
-          {contacts.map((e) => (
-            <div key={e.teamName} className='mt-6'>
-              <Card
-                icon={faAddressBook}
-                title={e.teamName}
-                onEditClick={() => {
-                  setIsEditMode(true)
-                  setSelectedContact(e)
-                }}
-              >
-                <ContactCardBody
-                  emails={e.emails}
-                  phoneNumbers={e.phoneNumbers}
-                />
-              </Card>
-            </div>
-          ))}
-          <Button className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'>
-            SAVE
-          </Button>
-        </div>
+        <ContactList
+          contacts={contacts}
+          onEditClick={(e) => {
+            setIsEditMode(true)
+            setSelectedContact(e)
+          }}
+        />
       </FloatingDrawer>
       <FloatingDrawer
         title={`Editing Contacts of ${selectedContact?.teamName}`}

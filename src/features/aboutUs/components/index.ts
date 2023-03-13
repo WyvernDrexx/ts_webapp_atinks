@@ -1,1 +1,1 @@
-export * from '../routes/AboutUs/Components/Info'
+export * from './Card'
