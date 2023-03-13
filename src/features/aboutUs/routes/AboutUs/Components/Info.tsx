@@ -1,5 +1,6 @@
 import {
   faAddressBook,
+  faCirclePlus,
   faClock,
   faLink,
   faLocationPin,
@@ -9,7 +10,9 @@ import { FloatingDrawer } from 'components/common/FloatingDrawer'
 import { useState } from 'react'
 import { Card } from '../../../components/Card'
 import { ContactCardBody } from './ContactCardBody'
-import { TextField, Button, Chip } from '@mui/material'
+import { TextField, Chip } from '@mui/material'
+import { Button } from 'components/common'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 type ContactType = {
   teamName: string
@@ -134,33 +137,38 @@ function Info() {
         onClose={() => setShowContactEdit(false)}
         title='Contacts'
       >
-        <p className='text-[#acb0b3] mt-4'>
-          Please provide the company's email & contacts
-        </p>
-        {contacts.map((e) => (
-          <div key={e.teamName} className='mt-6'>
-            <Card
-              icon={faAddressBook}
-              title={e.teamName}
-              onEditClick={() => {
-                setIsEditMode(true)
-                setSelectedContact(e)
-              }}
-            >
-              <ContactCardBody
-                emails={e.emails}
-                phoneNumbers={e.phoneNumbers}
-              />
-            </Card>
-          </div>
-        ))}
+        <div className='relative h-[100%]'>
+          <p className='text-[#acb0b3] mt-4'>
+            Please provide the company's email & contacts
+          </p>
+          {contacts.map((e) => (
+            <div key={e.teamName} className='mt-6'>
+              <Card
+                icon={faAddressBook}
+                title={e.teamName}
+                onEditClick={() => {
+                  setIsEditMode(true)
+                  setSelectedContact(e)
+                }}
+              >
+                <ContactCardBody
+                  emails={e.emails}
+                  phoneNumbers={e.phoneNumbers}
+                />
+              </Card>
+            </div>
+          ))}
+          <Button className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'>
+            SAVE
+          </Button>
+        </div>
       </FloatingDrawer>
       <FloatingDrawer
         title={`Editing Contacts of ${selectedContact?.teamName}`}
         onClose={() => setIsEditMode(false)}
         show={isEditMode}
       >
-        <div>
+        <div className='relative h-[100%]'>
           <p className='text-[#acb0b3] mt-4 mb-10'>
             Please provide the company's email & contacts
           </p>
@@ -177,25 +185,30 @@ function Info() {
               />
             ))}
             <TextField
+              type='number'
+              variant='standard'
               value={emailInput}
               onChange={(e) => setEmailInput(e.target.value)}
               sx={{
-                marginTop: 2
+                marginTop: 2,
+                backgroundColor: '##f7f7f7'
               }}
+              InputProps={{
+                className: 'bg-[#f7f7f7] border-0 p-3 rounded-lg',
+                disableUnderline: true
+              }}
+              placeholder='eg. salesteam@br.in'
               fullWidth
             />
             <Button
-              onClick={() => handleContactAdd('emails', emailInput)}
-              sx={{
-                marginTop: 3
-              }}
-              variant='contained'
-              fullWidth
+              onClick={() => handleContactAdd('phoneNumbers', phoneInput)}
+              className='mt-4 hover:text-white hover:bg-[#c42e38] text-lg w-[100%] py-4 font-bold text-[#BF202A] bg-[#fff1f3]'
             >
+              <FontAwesomeIcon className='mr-2' icon={faCirclePlus} />
               ADD MORE
             </Button>
           </div>
-          <div className='mt-8'>
+          <div className='mt-8 relative h-[100%]'>
             <p className='mb-2'>Contact Number</p>
             {selectedContact?.phoneNumbers.map((e) => (
               <Chip
@@ -208,24 +221,33 @@ function Info() {
               />
             ))}
             <TextField
+              type='tel'
+              variant='standard'
+              className='border-0'
               value={phoneInput}
               onChange={(e) => setPhoneInput(e.target.value)}
               sx={{
-                marginTop: 2
+                marginTop: 2,
+                backgroundColor: '##f7f7f7'
               }}
+              InputProps={{
+                className: 'bg-[#f7f7f7] border-0 p-3 rounded-lg',
+                disableUnderline: true
+              }}
+              placeholder='eg. 8554526586'
               fullWidth
             />
             <Button
               onClick={() => handleContactAdd('phoneNumbers', phoneInput)}
-              sx={{
-                marginTop: 2
-              }}
-              variant='contained'
-              fullWidth
+              className='mt-4 hover:text-white hover:bg-[#c42e38] text-lg w-[100%] py-4 font-bold text-[#BF202A] bg-[#fff1f3]'
             >
+              <FontAwesomeIcon className='mr-2' icon={faCirclePlus} />
               ADD MORE
             </Button>
           </div>
+          <Button className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'>
+            SAVE
+          </Button>
         </div>
       </FloatingDrawer>
     </div>
