@@ -1,1 +1,1 @@
-export * from './Info'
+export * from '../routes/AboutUs/Components/Info'

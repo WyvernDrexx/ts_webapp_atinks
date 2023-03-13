@@ -32,11 +32,6 @@ function FloatingDrawer({
               {title}
             </Typography>
           </div>
-          <div>
-            <p className='text-[#acb0b3] mt-4'>
-              Please provide the company's email & contacts
-            </p>
-          </div>
           {children}
         </div>,
         document.getElementById('floating-drawer')!

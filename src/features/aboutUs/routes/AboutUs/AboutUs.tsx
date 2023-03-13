@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 import { Tabs } from 'components/common'
-import { Info } from '../components/Info'
+import { Info } from './Components'
 
 function AboutUs() {
   return (
