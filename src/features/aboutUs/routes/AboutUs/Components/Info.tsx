@@ -83,6 +83,25 @@ function Info() {
       onEditClick: () => alert('Clicked!')
     }
   ]
+
+  const handleContactRemove = (
+    type: 'emails' | 'phoneNumbers',
+    value: string
+  ) => {
+    if (!selectedContact) return
+    const newContact = {
+      ...selectedContact,
+      [type]: selectedContact[type].filter((e) => e !== value)
+    }
+    setSelectedContact(newContact)
+    setContacts((s) =>
+      s.map((e) => {
+        if (e.key === selectedContact.key) return newContact
+        return e
+      })
+    )
+  }
+
   const handleContactAdd = (type: 'emails' | 'phoneNumbers', value: string) => {
     if (!selectedContact) return
     const newContact = {
@@ -153,7 +172,7 @@ function Info() {
                   marginRight: 1,
                   marginTop: 1
                 }}
-                onDelete={() => null}
+                onDelete={() => handleContactRemove('emails', e)}
                 label={e}
               />
             ))}
@@ -180,7 +199,7 @@ function Info() {
             <p className='mb-2'>Contact Number</p>
             {selectedContact?.phoneNumbers.map((e) => (
               <Chip
-                onDelete={() => null}
+                onDelete={() => handleContactRemove('phoneNumbers', e)}
                 sx={{
                   marginRight: 1,
                   marginTop: 1
