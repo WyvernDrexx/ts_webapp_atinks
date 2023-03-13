@@ -27,7 +27,7 @@ function ContactList({ contacts, onEditClick }: ContactListProps) {
         </div>
       ))}
       <Button className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'>
-        SAVE
+        Save
       </Button>
     </div>
   )

@@ -43,7 +43,7 @@ function ContactEdit({ contact, handleSave }: ContactEditType) {
         Please provide the company's email & contacts
       </p>
       <div>
-        <p className='mb-2'>Email ID</p>
+        <p className='mb-2 font-semibold'>Email ID</p>
         {selectedContact?.emails.map((e) => (
           <Chip
             sx={{
@@ -71,15 +71,16 @@ function ContactEdit({ contact, handleSave }: ContactEditType) {
           fullWidth
         />
         <Button
+          disabled={!emailInput}
           onClick={() => handleContactAdd('emails', emailInput)}
           className='mt-4 hover:text-white hover:bg-[#c42e38] text-lg w-[100%] py-4 font-bold text-[#BF202A] bg-[#fff1f3]'
         >
           <FontAwesomeIcon className='mr-2' icon={faCirclePlus} />
-          ADD MORE
+          Add More
         </Button>
       </div>
       <div className='mt-8 relative h-[100%]'>
-        <p className='mb-2'>Contact Number</p>
+        <p className='mb-2 font-semibold'>Contact Number</p>
         {selectedContact?.phoneNumbers.map((e) => (
           <Chip
             onDelete={() => handleContactRemove('phoneNumbers', e)}
@@ -108,18 +109,19 @@ function ContactEdit({ contact, handleSave }: ContactEditType) {
           fullWidth
         />
         <Button
+          disabled={!phoneInput}
           onClick={() => handleContactAdd('phoneNumbers', phoneInput)}
           className='mt-4 hover:text-white hover:bg-[#c42e38] text-lg w-[100%] py-4 font-bold text-[#BF202A] bg-[#fff1f3]'
         >
           <FontAwesomeIcon className='mr-2' icon={faCirclePlus} />
-          ADD MORE
+          Add More
         </Button>
       </div>
       <Button
         onClick={() => handleSave(selectedContact)}
         className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'
       >
-        SAVE
+        Save
       </Button>
     </div>
   )

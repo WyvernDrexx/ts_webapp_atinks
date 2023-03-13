@@ -66,7 +66,7 @@ const sidebarItems = [
 
 function Sidebar() {
   return (
-    <div className=' bg-white rounded-xl h-[100%] px-4 pt-10 relative'>
+    <div className=' bg-white rounded-xl px-4 pt-10 relative'>
       <img className='h-[50px]' src='logo-no-text.png' />
       <div className='mt-10'>
         {sidebarItems.map((e) => (
@@ -91,7 +91,7 @@ function Sidebar() {
           </div>
         ))}
       </div>
-      <div className='p-6 w-[100%] left-0 absolute bottom-0'>
+      <div className='px-2 w-[100%] mt-[95px]'>
         <div className='px-8 rounded-xl flex flex-col justify-center items-center border-2'>
           <ContactSupport className='text-[#dadada]' fontSize='large' />
           <p className='font-bold'>Need Help?</p>

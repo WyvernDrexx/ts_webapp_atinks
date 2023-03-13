@@ -28,8 +28,8 @@ export function Tabs({ tabs }: TabsProps) {
           <TabList
             TabIndicatorProps={{
               style: {
-                backgroundColor: '#b05d5f',
-                height: '3px'
+                backgroundColor: '#be222a',
+                height: '2px'
               }
             }}
             onChange={handleChange}
@@ -38,10 +38,12 @@ export function Tabs({ tabs }: TabsProps) {
             {tabs.map((e, i) => (
               <Tab
                 classes={{
-                  selected: 'text-red-100'
+                  selected:
+                    '!text-black !font-semibold !capitalize !min-w-[0px]'
                 }}
                 sx={{
-                  color: '#a4a4a4'
+                  textTransform: 'capitalize',
+                  fontWeight: '600'
                 }}
                 key={i}
                 label={e.label}
