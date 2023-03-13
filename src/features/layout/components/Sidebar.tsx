@@ -66,13 +66,13 @@ const sidebarItems = [
 
 function Sidebar() {
   return (
-    <div className='border-2 bg-white rounded-xl h-[100%] px-4 pt-10 relative'>
+    <div className=' bg-white rounded-xl h-[100%] px-4 pt-10 relative'>
       <img className='h-[50px]' src='logo-no-text.png' />
-      <div className='mt-2'>
+      <div className='mt-10'>
         {sidebarItems.map((e) => (
           <div
             className={cn(
-              'p-5 rounded-xl flex items-center cursor-pointer',
+              'p-4 rounded-xl flex items-center cursor-pointer',
               'hover:bg-[#faf9f9]',
               {
                 'bg-[#fff1f3]': e.active
@@ -85,20 +85,20 @@ function Sidebar() {
                 'text-[#c11e28]': e.active
               })}
             />
-            <p className={cn('text-[#bababa]', { 'text-[#c11e28]': e.active })}>
+            <p className={cn('text-[#bababa] text-sm font-semibold', { 'text-[#c11e28]': e.active })}>
               {e.title}
             </p>
           </div>
         ))}
       </div>
-      <div className='p-4 w-[100%] left-0 absolute bottom-0'>
+      <div className='p-6 w-[100%] left-0 absolute bottom-0'>
         <div className='px-8 rounded-xl flex flex-col justify-center items-center border-2'>
           <ContactSupport className='text-[#dadada]' fontSize='large' />
           <p className='font-bold'>Need Help?</p>
           <Typography className='text-center pt-4' variant='caption'>
             Our Support team is at your disposal.
           </Typography>
-          <Button className='w-[112px] mt-5 mb-2'>Get Help</Button>
+          <Button className='w-[112px] mt-5 mb-4'>Get Help</Button>
         </div>
       </div>
     </div>

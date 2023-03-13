@@ -1,3 +1,4 @@
+import { Verified } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import { Tabs } from 'components/common'
 import { Info } from './Components'
@@ -5,16 +6,22 @@ import { Info } from './Components'
 function AboutUs() {
   return (
     <div className='w-[100%]'>
-      <Typography gutterBottom variant='h5'>
+      <h1 className='text-2xl font-bold'>
         About Us
-      </Typography>
+      </h1>
       <div>
-        <div className='flex items-center'>
-          <div>
-            <img className='h-[78px]' src='brand-logo.png' />
-          </div>
-          <div className='pl-5 mt-12'>
-            <p className='text-lg font-bold'>A.T. Inks</p>
+        <div className='flex items-center mt-12'>
+          <img className='h-[78px]' src='brand-logo.png' />
+          <div className='pl-5'>
+            <p className='text-lg flex items-center font-bold'>
+              A.T. Inks
+              <span className='ml-9 flex items-center'>
+                <Verified htmlColor='#cbcbcb' />
+                <span className='text-sm text-[#5298de] underline ml-2'>
+                  Verify Company
+                </span>
+              </span>
+            </p>
             <p className='pt-2 text-md text-[#777777]'>Digital Inks</p>
           </div>
         </div>

@@ -21,7 +21,7 @@ function Card({
       <div className='flex justify-between items-center'>
         <div className='flex items-center'>
           <FontAwesomeIcon size='2x' color='#c3c3c3' icon={icon} />
-          <p className='ml-3 font-semibold'>{title}</p>
+          <p className='ml-3 text-xl font-semibold'>{title}</p>
         </div>
         <IconButton onClick={onEditClick}>
           <Edit color='error' />

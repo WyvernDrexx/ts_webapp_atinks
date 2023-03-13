@@ -1,12 +1,22 @@
 import {
-  faAddressBook, faClock,
+  faAddressBook,
+  faClock,
+  faGlobe,
   faLink,
   faLocationPin,
   faQuoteLeft
 } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  FacebookOutlined,
+  Instagram,
+  Language,
+  Twitter
+} from '@mui/icons-material'
 import { FloatingDrawer } from 'components/common/FloatingDrawer'
 import { ContactType } from 'features/aboutUs'
 import { useState } from 'react'
+import { cn } from 'utils'
 import { Card } from '../../../components/Card'
 import { ContactCardBody } from './ContactCardBody'
 import { ContactEdit } from './ContactEdit'
@@ -58,22 +68,70 @@ function Info() {
     {
       title: 'Address',
       icon: faLocationPin,
-      onEditClick: () => alert('Clicked!')
+      onEditClick: () => alert('Clicked!'),
+      Body: (
+        <div className='mt-8'>
+          <p>C-1 / 351 / 4, GIDC Makarpura</p>
+          <p className='mt-4'>Vadodara - 390010, Gujarat, India</p>
+        </div>
+      )
     },
     {
       title: 'Hours of Operations',
       icon: faClock,
-      onEditClick: () => alert('Clicked!')
+      onEditClick: () => alert('Clicked!'),
+      Body: (
+        <div className='mt-8'>
+          <p>Monday To Friday - 09:00 AM to 06:00 PM</p>
+        </div>
+      )
     },
     {
       title: 'Social Media & Links',
       icon: faLink,
-      onEditClick: () => alert('Clicked!')
+      onEditClick: () => alert('Clicked!'),
+      Body: (
+        <div className='mt-8'>
+          <div className='grid grid-cols-4'>
+            <div className='flex flex-col items-center'>
+              <Language htmlColor='#8b8b8b' fontSize='large' />
+              <p className='mt-4 text-[#8b8b8b]'>Website</p>
+            </div>
+            <div className='flex flex-col items-center'>
+              <Instagram htmlColor='#8b8b8b' fontSize='large' />
+              <p className='mt-4 text-[#8b8b8b]'>Instagram</p>
+            </div>
+            <div className='flex flex-col items-center'>
+              <FacebookOutlined htmlColor='#8b8b8b' fontSize='large' />
+              <p className='mt-4 text-[#8b8b8b]'>Facebook</p>
+            </div>
+            <div className='flex flex-col items-center'>
+              <Twitter htmlColor='#8b8b8b' fontSize='large' />
+              <p className='mt-4 text-[#8b8b8b]'>Twitter</p>
+            </div>
+          </div>
+        </div>
+      )
     },
     {
       title: 'Statement',
       icon: faQuoteLeft,
-      onEditClick: () => alert('Clicked!')
+      onEditClick: () => alert('Clicked!'),
+      Body: (
+        <div className='relative mt-8'>
+          <p>You think it, we ink it.</p>
+          <span
+            className={cn(
+              'text-red-500 bg-[#fef3f3]',
+              'absolute right-0 bottom-0 h-8 w-8',
+              'text-xs ',
+              'flex justify-center items-center rounded-full'
+            )}
+          >
+            +1
+          </span>
+        </div>
+      )
     }
   ]
 
@@ -125,4 +183,3 @@ function Info() {
 }
 
 export { Info }
-
