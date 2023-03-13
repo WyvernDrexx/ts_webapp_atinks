@@ -1,7 +1,16 @@
 import {
-  ContactSupport, Dashboard, EmojiEvents, Games, Handshake, Payments, PeopleAlt, SmsFailed, Widgets
+  ContactSupport,
+  Dashboard,
+  EmojiEvents,
+  Games,
+  Handshake,
+  Payments,
+  PeopleAlt,
+  SmsFailed,
+  Widgets
 } from '@mui/icons-material'
 import Typography from '@mui/material/Typography'
+import { Button } from 'components/common'
 import { cn } from 'utils'
 
 const sidebarItems = [
@@ -89,9 +98,7 @@ function Sidebar() {
           <Typography className='text-center pt-4' variant='caption'>
             Our Support team is at your disposal.
           </Typography>
-          <button className='p-1 mb-4 mt-5 w-[80%] bg-black text-white rounded-xl'>
-            Get Help
-          </button>
+          <Button className='w-[112px] mt-5 mb-2'>Get Help</Button>
         </div>
       </div>
     </div>
@@ -99,4 +106,3 @@ function Sidebar() {
 }
 
 export { Sidebar }
-
