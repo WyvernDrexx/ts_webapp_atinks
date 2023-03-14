@@ -1,12 +1,9 @@
 import {
   faAddressBook,
-  faClock,
-  faGlobe,
-  faLink,
+  faClock, faLink,
   faLocationPin,
   faQuoteLeft
 } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   FacebookOutlined,
   Instagram,
@@ -183,3 +180,4 @@ function Info() {
 }
 
 export { Info }
+

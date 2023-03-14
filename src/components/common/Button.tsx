@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { PropsWithChildren } from 'react'
 import { cn } from 'utils'
 
@@ -12,6 +13,7 @@ function Button({
   return (
     <button
       disabled={disabled}
+      //@ts-ignore
       type='button'
       className={cn(
         'bg-black',
