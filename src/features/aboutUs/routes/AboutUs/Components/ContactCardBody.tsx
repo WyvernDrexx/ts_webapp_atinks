@@ -13,7 +13,7 @@ function ContactCardBody({ emails, phoneNumbers }: ContactCardTypes) {
       <div className='flex items-center relative'>
         <FontAwesomeIcon color='#c3c3c3' icon={faEnvelope} />
         <div className='relative flex w-[100%]'>
-          <p className='ml-2'>{emails.slice(0, 2).join(' / ')}</p>
+          <p className='ml-4'>{emails.slice(0, 2).join(' / ')}</p>
           {emails.length > 2 && (
             <span
               className={cn(
@@ -28,10 +28,10 @@ function ContactCardBody({ emails, phoneNumbers }: ContactCardTypes) {
           )}
         </div>
       </div>
-      <div className='flex items-center mt-4 relative'>
+      <div className='flex items-center mt-8 relative'>
         <FontAwesomeIcon color='#c3c3c3' icon={faPhone} />
         <div className='relative flex w-[100%]'>
-          <p className='ml-2'>{phoneNumbers.slice(0, 2).join(' / ')}</p>
+          <p className='ml-4'>{phoneNumbers.slice(0, 2).join(' / ')}</p>
           {phoneNumbers.length > 2 && (
             <span
               className={cn(

@@ -119,7 +119,7 @@ function ContactEdit({ contact, handleSave }: ContactEditType) {
       </div>
       <Button
         onClick={() => handleSave(selectedContact)}
-        className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'
+        className='w-[100%] bottom-12 h-[60px] text-lg bg-[#bf202a] absolute'
       >
         Save
       </Button>

@@ -72,7 +72,7 @@ function Info() {
       Body: (
         <div className='mt-8'>
           <p>C-1 / 351 / 4, GIDC Makarpura</p>
-          <p className='mt-4'>Vadodara - 390010, Gujarat, India</p>
+          <p className='mt-8'>Vadodara - 390010, Gujarat, India</p>
         </div>
       )
     },

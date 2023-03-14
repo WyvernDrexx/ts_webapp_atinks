@@ -26,7 +26,7 @@ function ContactList({ contacts, onEditClick }: ContactListProps) {
           </Card>
         </div>
       ))}
-      <Button className='w-[100%] bottom-12 h-12 text-lg bg-[#bf202a] absolute'>
+      <Button className='w-[100%] bottom-12 h-[60px] text-lg bg-[#bf202a] absolute'>
         Save
       </Button>
     </div>

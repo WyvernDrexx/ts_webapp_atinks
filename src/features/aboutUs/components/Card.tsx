@@ -20,7 +20,7 @@ function Card({
     <div className={`border p-6 rounded-xl`}>
       <div className='flex justify-between items-center'>
         <div className='flex items-center'>
-          <FontAwesomeIcon size='2x' color='#c3c3c3' icon={icon} />
+          <FontAwesomeIcon className='w-6 h-6' color='#c3c3c3' icon={icon} />
           <p className='ml-3 text-xl font-semibold'>{title}</p>
         </div>
         <IconButton onClick={onEditClick}>
