@@ -14,7 +14,7 @@ function Header() {
       <div className='basis-2/12'>
         <img className='h-[80px]' src='logo.png' />
       </div>
-      <div className='ml-5 basis-5/12'>
+      <div className='-ml-6 basis-5/12'>
         <div
           className={cn(
             'w-[589px] pl-3 rounded-lg flex items-center',
