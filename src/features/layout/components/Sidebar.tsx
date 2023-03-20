@@ -66,39 +66,56 @@ const sidebarItems = [
 
 function Sidebar() {
   return (
-    <div className=' bg-white rounded-xl px-4 pt-10 relative'>
-      <img className='h-[50px]' src='logo-no-text.png' />
-      <div className='mt-10'>
-        {sidebarItems.map((e) => (
-          <div
-            className={cn(
-              'p-4 rounded-xl flex items-center cursor-pointer',
-              'hover:bg-[#faf9f9]',
+    <div>
+      <div className='flex flex-nowrap overflow-auto lg:hidden bg-white p-4 gap-4 mb-2 rounded-lg'>
+        {sidebarItems.map((e) => {
+          return <div className={
+            cn('p-4 rounded-lg min-w-[200px] text-center text-[#BE222A] bg-[#fff2f2]',
               {
-                'bg-[#fff1f3]': e.active
+                'bg-[#BE222A] text-[#f9e8e9]': e.active,
               }
-            )}
-            key={e.key}
-          >
-            <e.icon
-              className={cn('mr-5 text-[#bababa]', {
-                'text-[#c11e28]': e.active
-              })}
-            />
-            <p className={cn('text-[#bababa] text-sm font-semibold', { 'text-[#c11e28]': e.active })}>
-              {e.title}
-            </p>
-          </div>
-        ))}
+            )
+          } key={e.title}>{e.title}</div>
+        })}
       </div>
-      <div className='px-2 w-[100%] mt-[95px]'>
-        <div className='px-8 rounded-xl flex flex-col justify-center items-center border-2'>
-          <ContactSupport className='text-[#dadada]' fontSize='large' />
-          <p className='font-bold'>Need Help?</p>
-          <Typography className='text-center pt-4' variant='caption'>
-            Our Support team is at your disposal.
-          </Typography>
-          <Button className='w-[112px] mt-5 mb-4'>Get Help</Button>
+      <div className='bg-white rounded-xl px-4 pt-10 hidden lg:block relative'>
+        <img className='h-[50px]' src='logo-no-text.png' />
+        <div className='mt-10'>
+          {sidebarItems.map((e) => (
+            <div
+              className={cn(
+                'p-4 rounded-xl flex items-center cursor-pointer',
+                'hover:bg-[#faf9f9]',
+                {
+                  'bg-[#fff1f3]': e.active
+                }
+              )}
+              key={e.key}
+            >
+              <e.icon
+                className={cn('mr-5 text-[#bababa]', {
+                  'text-[#c11e28]': e.active
+                })}
+              />
+              <p
+                className={cn('text-[#bababa] text-sm font-semibold', {
+                  'text-[#c11e28]': e.active
+                })}
+              >
+                {e.title}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className='px-2 w-[100%] mt-[95px]'>
+          <div className='px-8 rounded-xl flex flex-col justify-center items-center border-2'>
+            <ContactSupport className='text-[#dadada]' fontSize='large' />
+            <p className='font-bold'>Need Help?</p>
+            <Typography className='text-center pt-4' variant='caption'>
+              Our Support team is at your disposal.
+            </Typography>
+            <Button className='w-[112px] mt-5 mb-4'>Get Help</Button>
+          </div>
         </div>
       </div>
     </div>
