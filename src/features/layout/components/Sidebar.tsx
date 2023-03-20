@@ -67,10 +67,10 @@ const sidebarItems = [
 function Sidebar() {
   return (
     <div>
-      <div className='flex flex-nowrap overflow-auto lg:hidden bg-white p-4 gap-4 mb-2 rounded-lg'>
+      <div className='whitespace-nowrap overflow-auto lg:hidden bg-white p-4 mb-2 rounded-lg'>
         {sidebarItems.map((e) => {
           return <div className={
-            cn('p-4 rounded-lg min-w-[200px] text-center text-[#BE222A] bg-[#fff2f2]',
+            cn('inline-block min-w-[120px] font-semibold text-sm mr-4 py-[10px] px-[15px] rounded-lg text-center text-[#BE222A] bg-[#fff2f2]',
               {
                 'bg-[#BE222A] text-[#f9e8e9]': e.active,
               }
