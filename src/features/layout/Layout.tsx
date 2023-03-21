@@ -27,7 +27,7 @@ function Layout() {
       </div>
       <div className='hidden sm:flex flex-col'>
         <Header />
-        <div className=' bg-[#eff2f9] gap-7 p-8  lg:grid-cols-[260px_minmax(900px,_1fr)] lg:grid'>
+        <div className=' bg-[#eff2f9] gap-7 p-0 lg:p-8  lg:grid-cols-[260px_minmax(900px,_1fr)] lg:grid'>
           <Sidebar />
           <div className=' bg-white rounded-xl h-[100%] p-10'>
             <Outlet />
